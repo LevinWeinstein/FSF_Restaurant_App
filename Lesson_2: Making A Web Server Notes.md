@@ -16,4 +16,12 @@
     2. __IP__ _Internet Protocol_
         1. IP addresses allow messages to be properly router to all participants on the internet.
         2. When you type a domain name into your browser, your browser finds it's corresponding IP in a DNS: a Domain Name Server
+        3. Ports:
+            1. since multiple applications using the internet can run on one machine, operating systems use ports to designate channels of communication on the same ip address.
+            2. Placing a colon after an IP address, followed by another number, indicates that we want to communicate on a specific port on the device using that IP Address.
+            3. On most machines, ports range from `0-65,536`
+            4. Ports `0-10,000` are reserved by the operation system for specific use.
+            5. `Port 80: Http`
+            6. `Port 8080: Https`
+            7. Client and server on the same machine: IP "localhost", accessed by typing `localhost` or `127.0.0.1`
     3. __HTTP__ _Hypertext Transfer Protocol_
