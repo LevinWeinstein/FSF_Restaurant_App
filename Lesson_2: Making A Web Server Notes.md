@@ -27,15 +27,20 @@
     3. __HTTP__ _Hypertext Transfer Protocol_
         0. Clients tell Servers what they want by using an HTTP Verb
         1. **HTTP Request Methods** *"HTTP Verbs"*:
-            * GET    : Read
-            * POST   : Create
-            * PUT    : Update/Replace
-            * PATCH  : Update/Modify
-            * DELETE : Delete
-            * HEAD   : requests the headers that are returned if the specified resource would be requested with an HTTP GET method. Such a request can be done before deciding to download a large resource to save bandwidth, for example.
-            * CONNECT: starts a two-way communication - can be used to open a tunnel
-            * OPTIONS: Describe the communication options
-            * TRACE  : Perform a message loop-back test along the path to the target resource, providing a useful debugging mechanism
+            * `GET    `: Read
+            * `POST   `: Create
+            * `PUT    `: Update/Replace
+            * `PATCH  `: Update/Modify
+            * `DELETE `: Delete
+            * `HEAD   `: requests the headers that are returned if the specified resource would be requested with an HTTP GET method. Such a request can be done before deciding to download a large resource to save bandwidth, for example.
+            * `CONNECT`: starts a two-way communication - can be used to open a tunnel
+            * `OPTIONS`: Describe the communication options
+            * `TRACE  `: Perform a message loop-back test along the path to the target resource, providing a useful debugging mechanism
             *
         2. Status Codes:
+            * `1XX`: Informational
+            * `2XX`: Success
+            * `3XX`: Redirection
+            * `4XX`: Client Error
+            * `5XX`: Server Error 
             
