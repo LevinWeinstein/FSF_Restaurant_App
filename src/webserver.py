@@ -16,11 +16,15 @@ FORMS = {"SEARCH_RESTAURANT":"message", "ADD_MENU_ITEM":"description"}
 # My standard sqlalchemy imports
 from sqlalchemy import create_engine # Make an engine for interacting with the SQLite DB
 from sqlalchemy.orm import sessionmaker # Make a Object-Relational-Mapper session for the Engine
+
+
+import sys
+sys.path.insert(0, '../setup')
 from database_setup import Base, Restaurant, MenuItem # Import my example DB Classes
 
 from sqlalchemy import func
 
-engine = create_engine('sqlite:///restaurantmenu.db')
+engine = create_engine('sqlite:///../db/restaurantmenu.db')
 Base.metadata.bind = engine
 
 DBSession = sessionmaker(bind = engine)
@@ -122,6 +126,7 @@ def main():
     # when I try to close and rerun the program
     except KeyboardInterrupt:
         print("^C entered, stopping web server...")
+        session.close()
         server.socket.close()
 
 class webserverHandler(BaseHTTPRequestHandler):

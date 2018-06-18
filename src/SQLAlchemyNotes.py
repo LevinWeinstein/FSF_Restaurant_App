@@ -4,6 +4,10 @@
 
 from sqlalchemy import create_engine # For creating an engine from a DB
 from sqlalchemy.orm import sessionmaker # To begin a session from an engine
+
+import sys # We can use sys to add other directories that we can import from
+
+sys.path.insert(0, '../setup')
 from database_setup import Base, Restaurant, MenuItem #Import my example DB Classes
 
 
@@ -12,7 +16,7 @@ from sqlalchemy import func # Important to check case insensitive matches
                             #  user = models.User.query.filter(func.lower(User.username) == func.lower("LeViN"))
 
 
-engine = create_engine('sqlite:///restaurantmenu.db') #create an engine from the database file
+engine = create_engine('sqlite:///../db/restaurantmenu.db') #create an engine from the database file
 Base.metadata.bind = engine # bind our current database engine to the base class.
                             # This command just makes the connections between our class
                             # definitions, and their corresponding tables within our database
