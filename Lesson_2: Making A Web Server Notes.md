@@ -5,10 +5,15 @@
         2. Server: The computer that has information that it shares with clients.
         3. Client has to initiate communication to request information
         4. Server constantly stays listening for requests from Clients
-        4. More Specifically: All clients can send messages and receive messages to and from the server, but the aren't listening all the time so they aren't capable of reaching each other when one of them wants because the other isn't listening. To connect to each other they could go through a server, since the server is always listening. That way, they could both connect to the server and see that each other are online.
+        5. More Specifically: All clients can send messages and receive messages to and from the server, but the aren't listening all the time so they aren't capable of reaching each other when one of them wants because the other isn't listening. To connect to each other they could go through a server, since the server is always listening. That way, they could both connect to the server and see that each other are online.
 2. Protocols
     1. __TCP__ _Transmission Control Protocol_
-        1. Enables information to be broken into small packets, and sent between client and server
-        2. If a packet is lost along the way, the send and receiver have a way of figuring out which packet is missing, and request that they be resent
+        1. Enables information to be broken into small packets, and sent between clients and servers
+        2. If a packet is lost along the way, the sender and receiver have a way of figuring out which packet is missing, and request that they be resent
+    2. __UDP__ _User Datagram Protocol_
+        1. The counterpart to TCP is UDP.
+        2. Good for streaming content like music or video.
     2. __IP__ _Internet Protocol_
+        1. IP addresses allow messages to be properly router to all participants on the internet.
+        2. When you type a domain name into your browser, your browser finds it's corresponding IP in a DNS: a __*D__omain* __*N__ame* __*S__erver
     3. __HTTP__ _Hypertext Transfer Protocol_
