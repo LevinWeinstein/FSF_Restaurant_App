@@ -6,6 +6,12 @@ from sqlalchemy import create_engine # For creating an engine from a DB
 from sqlalchemy.orm import sessionmaker # To begin a session from an engine
 from database_setup import Base, Restaurant, MenuItem #Import my example DB Classes
 
+
+from sqlalchemy import func # Important to check case insensitive matches
+                            # usage:
+                            #  user = models.User.query.filter(func.lower(User.username) == func.lower("LeViN"))
+
+
 engine = create_engine('sqlite:///restaurantmenu.db') #create an engine from the database file
 Base.metadata.bind = engine # bind our current database engine to the base class.
                             # This command just makes the connections between our class
@@ -23,6 +29,7 @@ restaurants = session.query(Restaurant).all() # Confirm additional restaurant by
 
 cheesepizza = MenuItem(name = "Cheese Pizza", description = "Made with all natural ingredients and fresh mozarella", course = "Entree", price = "$8.99", restaurant = myFirstRestaurant)
 
+print(len(session.query(MenuItem).filter_by(name="cheese pizza").all()))
 session.add(cheesepizza)
 session.commit()
 
