@@ -15,5 +15,5 @@
         2. Good for streaming content like music or video.
     2. __IP__ _Internet Protocol_
         1. IP addresses allow messages to be properly router to all participants on the internet.
-        2. When you type a domain name into your browser, your browser finds it's corresponding IP in a DNS: a __*D__omain* __*N__ame* __*S__erver
+        2. When you type a domain name into your browser, your browser finds it's corresponding IP in a DNS: a *__D__omain* *__N__ame* *__S__erver*
     3. __HTTP__ _Hypertext Transfer Protocol_
