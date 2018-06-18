@@ -62,6 +62,7 @@ STYLE_HTML_CSS = """
 
 body {
     text-align:center;
+    margin-top:80px;
 }
 
 .deleter {
@@ -89,6 +90,7 @@ def delete_form(item):
 <input name="delete_item_name" type="hidden" value="{}">
 <input name="delete_from_restaurant" type="hidden" value="{}">
 <input type="submit" value="Delete">
+</form>
 """.format(item.name, item.restaurant.name)
 
 
@@ -101,7 +103,10 @@ def add_menu_item_form(_restaurant_name):
 <input name="course" placeholder="Course" type="text">
 <input name="restaurant" type="hidden" value="{}">
 <input name="description" placeholder="Description" type="text">
+<p>
 <input type="submit" value="Submit">
+</p>
+</form>
 """.format(_restaurant.name)
 
 def main():
@@ -128,11 +133,12 @@ class webserverHandler(BaseHTTPRequestHandler):
         output = "<html><head>"
         output += STYLE_HTML_CSS
         output += "<body>"
+        output += single_form("Enter A Restaurant to see its menu")
         if check_restaurant_name(message):
             output += "<h1>" + list_restaurants(message) + "</h1>"
         else:
             output += "<h1> Not Results Found for %s.</h1>" % message
-        output += single_form("Enter A Restaurant to see its menu")
+ 
         output += "</body></html>"
         self.wfile.write(bytes(output, "utf-8"))
         print(output)
@@ -178,7 +184,7 @@ class webserverHandler(BaseHTTPRequestHandler):
         output += "</head><body>"
         try:
             _food = session.query(MenuItem).filter_by(restaurant=_restaurant, name=_name).first()
-            "<p>Deleting {} from {}</p>".format(_food.name, _food.restaurant.name)
+            output += "<p>Deleting {} from {}</p>".format(_food.name, _food.restaurant.name)
             session.delete(_food)
             session.commit()
         except:
@@ -248,7 +254,7 @@ class webserverHandler(BaseHTTPRequestHandler):
 
     def do_POST(self):
         try:
-            self.send_response(301)
+            self.send_response(200)
             self.send_header('Content-type', 'text/html')
             self.end_headers()
 
