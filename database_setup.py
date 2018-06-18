@@ -1,4 +1,4 @@
-"""FIlename: create_db.py
+"""Filename: create_db.py
    Author  : Levin Weinstein
    Purpose : Create the initial database for the Restaurant Project
 """
