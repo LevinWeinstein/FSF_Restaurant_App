@@ -25,8 +25,8 @@
             6. `Port 8080: Https`
             7. Client and server on the same machine: IP "localhost", accessed by typing `localhost` or `127.0.0.1`
     3. __HTTP__ _Hypertext Transfer Protocol_
-        0. Clients tell Servers what they want by using an HTTP Verb
-        1. **HTTP Request Methods** *"HTTP Verbs"*:
+        1. Clients tell Servers what they want by using an HTTP Verb
+        2. **HTTP Request Methods** *"HTTP Verbs"*:
             * `GET    `: Read
             * `POST   `: Create
             * `PUT    `: Update/Replace
@@ -37,7 +37,7 @@
             * `OPTIONS`: Describe the communication options
             * `TRACE  `: Perform a message loop-back test along the path to the target resource, providing a useful debugging mechanism
             *
-        2. **Status Codes**:
+        3. **Status Codes**:
             * `1XX`: Informational
             * `2XX`: Success
             * `3XX`: Redirection
